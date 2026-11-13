@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 官方 logo 的底色：纯黑。自适应图标的前景层与它同色，圆角矩形边缘看不出接缝 -->
+    <color name="ic_launcher_background">#000000</color>
+</resources>

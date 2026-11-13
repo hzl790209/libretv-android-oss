@@ -1,0 +1,43 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.libretv.client'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'com.libretv.client'
+        minSdk 21
+        targetSdk 34
+        // 版本约定：重大交互/新能力进位次版本（1.1.0），修复进位修订号（1.0.1）
+        // 每次发版 versionCode 递增；build-apk.sh 会把版本写进 APK 文件名
+        // 开源分支（opensource）：与私有版同一套代码，唯一差别是不打包任何内置源
+        // versionName 带 -oss 后缀，安装时一眼能分清装的是哪个版本
+        versionCode 16
+        versionName '1.2.4-oss'
+    }
+
+    buildTypes {
+        debug { }
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // 内置 Node 与依赖库必须以真实文件形式解压到 nativeLibraryDir 才能被 exec / dlopen
+    packaging {
+        jniLibs {
+            useLegacyPackaging = true
+            // 这些 .so 是可执行 ELF 而非 JNI 库，必须原样保留。
+            // 全部标记为 keep 后 strip 任务只做复制，不需要本机安装 NDK；
+            // 不能直接禁用 strip 任务，否则 packageDebug 会拿到空的原生库输入。
+            keepDebugSymbols += ['**/*.so']
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.gradle/
+build/
+app/build/
+local.properties
+*.apk
+dist/
+debug.keystore
+.idea/
+
+# 内置源清单由本机导出，含用户自己的源地址：明文与成品 APK 都不提交仓库
+app/src/main/assets/libretv-settings.json
+app/src/main/assets/sources.json
+app/src/main/assets/default-sources.json
+
+# 构建期下载的第三方运行时（Node ELF + 官方 standalone 包），体积约 100 MB，
+# 由 tools/prepare-node.py 生成，不入库
+app/src/main/jniLibs/
+app/src/main/assets/libretv-standalone.bin
+app/src/main/assets/libretv-standalone.tar.gz
+app/src/main/assets/node-runtime.json
+
+# 源测活缓存（含源地址与可用性，属本机数据）
+tools/.source-health-cache.json
+
+# Python 缓存
+__pycache__/
+*.pyc
