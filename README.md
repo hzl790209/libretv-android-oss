@@ -9,6 +9,12 @@
 - 最低系统：Android 5.0（API 21），目标 34
 - 许可：[AGPL-3.0-or-later](LICENSE)
 
+## 下载
+
+**[LibreTV-1.2.4-oss-debug.apk](https://github.com/hzl790209/libretv-android-oss/releases/download/v1.2.4-oss/LibreTV-1.2.4-oss-debug.apk)**　（45 MB，见 [Releases](https://github.com/hzl790209/libretv-android-oss/releases)）
+
+debug 签名，装的时候系统会提示「未知来源」，允许即可。想自己编见第七节。
+
 ---
 
 ## 一、为什么开源版不带源
